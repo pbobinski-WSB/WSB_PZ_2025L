@@ -1,0 +1,1 @@
+Przykładowe rozwiązanie zadania powtórzeniowego z Programowania Zaawansowanego.
