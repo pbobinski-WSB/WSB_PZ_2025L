@@ -1,1 +1,3 @@
-Przykładowe rozwiązanie zadania powtórzeniowego z Programowania Zaawansowanego.
+Repozytorium dla ćwiczeń z przedmiotu:
+**Programowanie Zaawansowane**
+*Semestr 2025L w Wsb Merito.*
