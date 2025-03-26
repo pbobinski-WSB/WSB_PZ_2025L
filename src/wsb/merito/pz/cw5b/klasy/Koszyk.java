@@ -44,4 +44,8 @@ public class Koszyk implements Koszykable{
         }
         return cart.pop();
     }
+
+    public int getCartCount() {
+        return cart.size();
+    }
 }
