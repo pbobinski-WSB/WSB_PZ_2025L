@@ -6,7 +6,7 @@ public class Koszyk implements Koszykable {
 
     private Klient owner;
 
-    public Koszyk() {
+    public Koszyk(Klient owner) {
         this.owner = owner;
         this.cart = new Stack<>();
     }
@@ -36,5 +36,16 @@ public class Koszyk implements Koszykable {
             return null;
         }
         return cart.pop();
+    }
+
+    @Override
+    public String toString() {
+        return "Koszyk{" +
+                "cart=" + cart +
+                '}';
+    }
+
+    public int getCartCount() {
+        return cart.size();
     }
 }

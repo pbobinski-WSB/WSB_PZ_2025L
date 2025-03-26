@@ -30,8 +30,7 @@ public class ProduktWKoszyku extends Produkt{
     @Override
     public String toString() {
         return "ProduktWKoszyku{" +
-                "liczba=" + liczba + "\n" +
-                "produkt=" + super.toString() +
+                "liczba=" + liczba + "produkt=" + super.toString() +
                 '}';
     }
 

@@ -6,7 +6,7 @@ public class Klient {
 
     private String name;
 
-    private Koszykable koszyk;
+    private Koszyk koszyk;
 
     private double budzet;
 
@@ -15,7 +15,7 @@ public class Klient {
 
     public Klient(String name, double budzet) {
         this.name = name;
-        this.koszyk = new Koszyk();
+        this.koszyk = new Koszyk(this);
         this.budzet = budzet;
     }
 
@@ -35,21 +35,19 @@ public class Klient {
         this.budzet = budzet;
     }
 
-    public Koszykable getKoszyk() {
+    public Koszyk getKoszyk() {
         return koszyk;
     }
 
-    public void setKoszyk(Koszykable koszyk) {
+    public void setKoszyk(Koszyk koszyk) {
         this.koszyk = koszyk;
     }
 
     @Override
     public String toString() {
         return "Klient{" +
-                "name='" + name + '\'' +
-                ", koszyk=" + koszyk +
-                ", budzet=" + budzet +
-                '}';
+                "name='" + name + '\'' + ", budzet=" + budzet +
+                "\n\t, koszyk=" + koszyk + '}';
     }
 
     @Override
