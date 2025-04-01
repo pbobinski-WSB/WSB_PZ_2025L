@@ -73,7 +73,13 @@ public class TestMongoDB {
             System.out.println("----- filmy i strumienie -----");
             try (MongoCursor<Document> cursor = movies.find().iterator()) {
                 StreamSupport.stream(Spliterators.spliteratorUnknownSize(cursor, Spliterator.ORDERED), false)
-                        .filter(movie -> movie.get("year").toString().startsWith("2"))
+                        .filter(movie -> {
+                            Object yearObj = movie.get("year");
+                            if (yearObj instanceof Integer year) {
+                                return year > 2000;
+                            }
+                            return false;
+                        })
                         .filter(m -> ((Document)m.get("awards")).getInteger("wins") > 200)
                         .map(movie -> "Film: " + movie.getString("title") + " (" + movie.get("year") + ")" + " [" + movie.get("awards")+ "]")
                         .forEach(System.out::println);
