@@ -5,3 +5,4 @@
 /out/production/
 /target/classes/
 /.idea/*.xml
+/src/wsb/merito/pz/cw07/mongodb/credentials.txt
