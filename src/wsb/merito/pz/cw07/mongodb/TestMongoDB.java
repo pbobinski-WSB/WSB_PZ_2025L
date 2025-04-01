@@ -22,7 +22,7 @@ public class TestMongoDB {
 
         System.out.println("Hello from mongoDB");
 
-        ConnectionString connectionString = new ConnectionString("mongodb+srv://");
+        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
         MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(connectionString).build();
         try (MongoClient mongoClient = MongoClients.create(settings)) {
             List<Document> dbs = mongoClient.listDatabases().into(new ArrayList<>());
