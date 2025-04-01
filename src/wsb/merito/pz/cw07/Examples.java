@@ -18,7 +18,7 @@ public class Examples {
 
         List<String> names = List.of("Anna", "Tomasz", "Kasia");
 
-        names.stream().forEach(System.out::println);
+        names.forEach(System.out::println);
 
 //Tworzenie strumieni
 

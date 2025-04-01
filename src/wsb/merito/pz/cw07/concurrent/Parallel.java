@@ -23,7 +23,7 @@ public class Parallel {
         numbers = IntStream.range(1, 100).boxed().toList();
         AtomicInteger atomicSum = new AtomicInteger(0);
 
-        numbers.parallelStream().forEach(n -> atomicSum.addAndGet(n));
+        numbers.parallelStream().forEach(atomicSum::addAndGet);
 
         System.out.println("Bezpieczna suma: " + atomicSum.get());
 
@@ -34,9 +34,7 @@ public class Parallel {
         System.out.println("Wynik z możliwym wyścigiem: " + counter);
 
         AtomicInteger counter = new AtomicInteger(0);
-        numbers.parallelStream().forEach(n -> {
-            counter.addAndGet(n);
-        });
+        numbers.parallelStream().forEach(counter::addAndGet);
         System.out.println("Wynik bezpieczny: " + counter.get());
 
     }
