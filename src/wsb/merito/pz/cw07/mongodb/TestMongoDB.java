@@ -11,6 +11,7 @@ import com.mongodb.client.model.Updates;
 import org.bson.Document;
 
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -51,7 +52,7 @@ public class TestMongoDB {
                     .map(doc -> doc.get("location", Document.class))
                     .map(location -> location.get("address", Document.class))
                     .map(Document::toJson)
-                    .forEach((Block<? super String>) System.out::println);
+                    .forEach(System.out::println);
 
             List<String> cities = theatersList.stream()
                     .limit(15)
@@ -84,8 +85,6 @@ public class TestMongoDB {
                         .map(movie -> "Film: " + movie.getString("title") + " (" + movie.get("year") + ")" + " [" + movie.get("awards")+ "]")
                         .forEach(System.out::println);
             }
-
-
         }
     }
 }
