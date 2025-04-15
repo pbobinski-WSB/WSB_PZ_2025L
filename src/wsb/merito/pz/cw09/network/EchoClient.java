@@ -1,7 +1,7 @@
 package wsb.merito.pz.cw09.network;
 
 import java.io.*;
-import java.net.Socket;
+import java.net.*;
 
 public class EchoClient {
     public static void main(String args[]) {
